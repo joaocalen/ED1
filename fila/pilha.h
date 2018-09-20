@@ -74,6 +74,10 @@ int vazia_pilha(Pilha* p);
 
 /* retorna idade da pessoa
  */
-int idade(Pessoa* p);
+int getIdade(Pessoa* p);
+
+/* Dada duas pilhas, retira todos os elementos da primeira e transfere para a segunda.
+ */
+void transfereItens(Pilha* p1, Pilha* p2);
 
 #endif /* PILHA_H_ */

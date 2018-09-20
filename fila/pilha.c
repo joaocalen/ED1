@@ -52,7 +52,7 @@ Pessoa* inicializaPessoa(char* nome, int idade, char* endereco) {
 }
 
 Pessoa* pop(Pilha* pilha) {
-    if (pilha -> topo != 0) {
+    if (!vazia_pilha(pilha)) {
         pilha -> topo--;
         return (pilha -> pessoas[pilha-> topo]);
     }
@@ -88,6 +88,14 @@ int vazia_pilha(Pilha* p) {
 int geiIdade(Pessoa* p) {
     return p -> idade;
 }
+
+
+void transfereItens(Pilha* p1, Pilha* p2){
+    while (!vazia_pilha(p1)) {
+        push(pop(p1), p2);
+    }
+}
+
 
 /*
  * 
