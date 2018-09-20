@@ -95,8 +95,6 @@ void transfereItens(Pilha* p1, Pilha* p2){
         push(pop(p1), p2);
     }
 }
-
-
 /*
  * 
  */
