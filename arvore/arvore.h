@@ -1,3 +1,6 @@
+#ifndef ARVORE_H
+#define ARVORE_H
+
 typedef struct arv Arv;
 
 //Cria uma �rvore vazia
@@ -34,3 +37,5 @@ char info (Arv* a);
 
 //retorna a altura da arvore
 int altura (Arv* a);
+#endif	// ARVORE_H
+
