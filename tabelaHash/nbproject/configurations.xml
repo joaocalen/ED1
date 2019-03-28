@@ -10,6 +10,7 @@
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
       <itemPath>main.c</itemPath>
+      <itemPath>tabelaHash.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Arquivos de Recurso"
@@ -39,6 +40,8 @@
       </compileType>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="tabelaHash.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="tabelaHash.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
@@ -63,6 +66,8 @@
         </asmTool>
       </compileType>
       <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tabelaHash.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="tabelaHash.h" ex="false" tool="3" flavor2="0">
       </item>

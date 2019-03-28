@@ -16,15 +16,28 @@
 #include <string.h>
 #include "tabelaHash.h"
 
-/*
- * 
- */
 int main(int argc, char** argv) {
-    Hash tabela;
+    FILE* fp;
+    Hash tab;
+    char s[NPAL];
 
-    FILE *arquivo;
-    arquivo = fopen(argv[argc - 1], "r");
+    if (argc != 2) {
+        printf("Arquivo de saída não fornecido \n");
+        return 0;
+    }
 
+    fp = fopen(argv[1], "rt");
+    if (fp == NULL) {
+        printf("ERRO DE ABERTURA DE ARQUIVO\n");
+        return 0;
+    }
+
+    inicializa(tab);
+    while (le_palavra(fp, s)) {
+        Palavra* p = acessa(tab, s);
+        p = palavra_setOcorrencias(p);
+    }
+
+    imprime(tab);
     return (EXIT_SUCCESS);
 }
-

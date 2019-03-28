@@ -35,6 +35,15 @@ extern "C" {
     void imprime(Lista* l);
 
     Item* inicializaItem(char* nome, int idade);
+    
+    //bool ordenada (Lista* l);
+    
+    Lista* copia(Lista* l1, Lista* l2);
+    
+    Lista* copiaSemRepeticao (Lista* l1, Lista* l2);
+    
+    Lista* inverte(Lista* l1, Lista* l2);
+    
 
 
 

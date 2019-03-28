@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "lista.h"
@@ -21,52 +21,52 @@ Item* inicializaItem(char* nome, int idade) {
     return item;
 }
 
-Lista* inicializaLista() {
-    Lista* l = (Lista*) malloc(sizeof (Lista));
-    return l;
-}
-
 Lista* insere(Item* item, Lista* l) {
-    Lista* nova = inicializaLista();
+    Lista* nova = (Lista*) malloc(sizeof (Lista));
     nova -> prox = l;
     nova -> item = item;
     return nova;
 }
 
 Lista* retira(Item* item, Lista* l) {
-    Celula* aux = NULL;
-    if (l-> item == NULL) {
-        return l;
-    } else if (l->item == item) {
-        aux = l;
-        l = l -> prox;
-        free(aux ->item->nome);
-        free(aux ->item);
-        free(aux);
-    } else {
-        Celula* ant = NULL;
-        aux = l;
-        while ((aux -> item != item) && (aux != NULL)) {
-            ant = aux;
-            aux = aux -> prox;
-        }
-        if (aux == NULL) {
-            free(aux);
-            free(ant);
-        } else {
-            ant -> prox = aux -> prox;
-            free(aux ->item -> nome);
-            free(aux ->item);
-            free(aux);
-            free(ant);
-        }
+    Celula* aux = l;
+    Celula* ant = NULL;
+    while (aux != NULL && aux->item->nome != item->nome) {
+        ant = aux;
+        aux = aux ->prox;
     }
+    if (aux == NULL) {
+        //printf("Elemento não encontrado!\n");
+        return l;
+    }
+    if (ant == NULL) {
+        l = aux -> prox;
+    } else {
+        ant -> prox = aux -> prox;
+    }
+    free(aux ->item ->nome);
+    free(aux ->item);
+    free(aux);
     return l;
 }
 
-Lista* libera(Lista* l){
-    while (l != NULL){
-        l = retira(l->item,l);
+Lista* libera(Lista* l) {
+    while (l != NULL) {
+        l = retira(l->item, l);
+    }
+    free(l);
+    return NULL;
+}
+
+void imprime(Lista* l) {
+    Celula* aux = l;
+    while (aux != NULL) {
+        printf("Nome: %s \n", aux ->item ->nome);
+        printf("Idade: %d \n", aux ->item ->idade);
+        aux = aux -> prox;
+    }
+    if (l == NULL) {
+        printf("LISTA VAZIA");
     }
 }
 

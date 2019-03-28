@@ -13,33 +13,35 @@ struct lista {
     Lista* prox;
 };
 
-Lista* cria(){
-    Lista* l = (Lista*) malloc(sizeof(Lista));
+Lista* cria() {
+    Lista* l = (Lista*) malloc(sizeof (Lista));
     l-> info = NULL;
     l-> prox = NULL;
 }
 
 Lista* insere(void* dado, Lista* l) {
-    Lista* novo = (Lista*) malloc(sizeof (Lista*));
+    Lista* novo = (Lista*) malloc(sizeof (Lista));
     novo -> info = dado;
     novo -> prox = l;
     return novo;
 }
 
-Lista* retira(Lista* l, int(*cmp)(void*, void*), void* dado, void(*f)(void*)) {
-
+Lista* retira(Lista* l, int(*cmp)(void*, void*), void* dado) {
+    percorre(l, cmp, dado);
+    return NULL;
 }
 
 int percorre(Lista* l, int(*cb)(void*, void*), void* dado) {
     Lista* aux;
     aux = l;
-    while (l != NULL) {
-        cb(l->info, dado);
-        l = l-> prox;
+    while (aux != NULL) {
+        if (aux->info != NULL)
+            cb(aux->info, dado);
+        aux = aux-> prox;
     }
     return 1;
 }
 
-void libera(Lista* l, void(*f)(void*,void*)){
-    f(l,NULL);
+void libera(Lista* l, void(*f)(void*)) {
+    f(l);
 }

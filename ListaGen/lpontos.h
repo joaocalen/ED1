@@ -22,8 +22,12 @@ extern "C" {
 
     
     typedef struct ponto Ponto;
+    
+    typedef struct cg CG;
 
     Lista* criaListaPontos();
+    
+    Ponto* inicializaPonto(float x, float y);
     
     Lista* inserePonto(Lista* l, float x, float y);
     
@@ -31,9 +35,25 @@ extern "C" {
     
     Lista* retiraPonto(Lista* l, float x, float y);
     
-    Ponto* centroGeometrico(Lista* l);
+    CG* inicializaCG();
     
-    void liberaPontos(Lista* l);
+    void imprimeCG(CG* cg);
+    
+    CG* calculaCG(CG* cg);
+    
+
+    
+    Lista* liberaPontos(Lista* l);
+    
+    //funções de callback
+    
+    static int imprime(void* info, void* dado);
+    
+    static void liberaPonto(void* info);
+    
+    static int compara(void* info, void* dado);
+    
+    int centroGeometrico(void* info, void* dado);
 
 #ifdef __cplusplus
 }

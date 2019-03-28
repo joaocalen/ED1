@@ -9,7 +9,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
-      <itemPath>main.c</itemPath>
+      <itemPath>arvore.c</itemPath>
       <itemPath>prog_arv.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -38,9 +38,9 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="arvore.h" ex="false" tool="3" flavor2="0">
+      <item path="arvore.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="main.c" ex="false" tool="0" flavor2="0">
+      <item path="arvore.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="prog_arv.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -65,9 +65,9 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="arvore.h" ex="false" tool="3" flavor2="0">
+      <item path="arvore.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="main.c" ex="false" tool="0" flavor2="0">
+      <item path="arvore.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="prog_arv.c" ex="false" tool="0" flavor2="0">
       </item>

@@ -28,7 +28,7 @@ extern "C" {
     
     int percorre(Lista* l, int (*cb)(void*,void*),void* dado);
     
-    void libera(Lista* l, void(*f)(void*,void*));
+    void libera(Lista* l, void(*f)(void*));
 
 
 #ifdef __cplusplus
